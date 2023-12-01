@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        
+        <script src="./js/scripts.js" type="module" defer></script>
+        <link rel="stylesheet" href="./css/estilosMonstruos.css">
+        <title>Halloween</title>
+    </head>
+<body>
+    <header>
+        <img src="./assets/images/logo.png" alt="logo">
+        <nav>
+            <ul class="list-unstyled">
+                <li><a href="./index.html" >Home</a></li>
+                <li><a href="./monstruos.html">Monstruos</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <section class="encabezado">
+        <h1 class="display-5">CRUD Monstruos</h1>
+    </section>
+        <section class="seccion-formulario" class="ocultar-form">
+            <div class="container form-div">
+                <h2 id="titulo_form">Información del Monstruo</h2>
+                
+                <form action="#">
+                    <input type="hidden" name="txtId">
+                    <div class="form-group">
+                        <label class="img-icon mb-2" for="txtNombre"><img src="./assets/images/pumpkin.svg" alt="nombre">
+                            Nombre:</label>
+                        <input type="text" class="form-control mb-2" id="txtNombre" placeholder="Ingrese nombre" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="img-icon mb-2" for="txtAlias" ><img src="./assets/images/mask.svg" alt="alias">
+                            Alias:</label>
+                        <input type="text" class="form-control mb-3" id="txtAlias" placeholder="Ingrese su alias" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="img-icon mb-2"><img src="./assets/images/defensa.svg" alt="defensa">Defensa:</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radio_Defensa" id="rdio_pocion" value="pocion" checked>
+                            <label class="form-check-label " for="rdio_pocion">Pocion</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radio_Defensa" id="rdio_crucifijo" value="crucifijo">
+                            <label class="form-check-label" for="rdio_crucifijo">Crucifijo</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radio_Defensa" id="rdio_estaca" value="estaca">
+                            <label class="form-check-label" for="rdio_estaca">Estaca</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="radio_Defensa" id="rdio_plata" value="plata">
+                            <label class="form-check-label" for="rdio_plata">Plata</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="range_Miedo" class="img-icon"><img src="./assets/images/ghost.svg" alt="miedo">
+                            Miedo (1-100):</label>
+                        <input type="range" class="form-control-range" id="range_Miedo" min="1" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="select_Tipo" class="img-icon"><img  src="./assets/images/monster.svg" alt="Tipo_Monstruo">
+                            Tipo:</label>
+                        <div id="tipos_monstruos">
+                            <!-- mostrar los tipos de monstruos -->
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success icono-btn" id="btnAltaMod"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#ffffff" d="M48 96V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V170.5c0-4.2-1.7-8.3-4.7-11.3l33.9-33.9c12 12 18.7 28.3 18.7 45.3V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96C0 60.7 28.7 32 64 32H309.5c17 0 33.3 6.7 45.3 18.7l74.5 74.5-33.9 33.9L320.8 84.7c-.3-.3-.5-.5-.8-.8V184c0 13.3-10.7 24-24 24H104c-13.3 0-24-10.7-24-24V80H64c-8.8 0-16 7.2-16 16zm80-16v80H272V80H128zm32 240a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"/></svg>
+                        Guardar
+                    </button>
+                    <button type="button" value="Eliminar" class="btn btn-danger ocultar_boton" id="btnEliminar"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#ffffff" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM184 232H328c13.3 0 24 10.7 24 24s-10.7 24-24 24H184c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg>
+                        Eliminar
+                    </button>
+                    <button type="button" value="Cancelar" class="btn btn-warning ocultar_boton" id="btnCancelar"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#ffffff" d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm175 79c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+                        Cancelar
+                    </button>
+                </form>
+            </div>
+            <img src="../client/assets/images/loader fantasma.gif" alt="loader" id="form_loader" class="ocultar_fantasma">
+        </section>
+        
+        <section class="seccion-tabla">
+            <h2>Lista de Monstruos</h2>
+                <div id="divFiltroTipo" class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Dropdown button
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Action</a></li>
+                                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                              </div> -->
+                            <label>Filtrar por Tipo:</label><div class="dropdown" id="tipos_monstruos_filtros"></div>
+                        </div>
+                    </div>                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Promedio de Miedo:</label><input type="text" class="form-control" style="width: 75%; text-align: center;" name="promedio_miedo" id="promedio_miedo" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="divMiedoMaxMin" class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Miedo maximo:</label>
+                            <input type="text" class="form-control" style="width: 75%; text-align: center;" name="miedo_max" id="miedo_max" value="0" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Miedo minimo:</label>
+                            <input type="text" class="form-control" style="width: 75%; text-align: center;" name="miedo_min" id="miedo_min" value="0" readonly>
+                        </div>
+                    </div>
+                </div>
+                <fieldset id="columnasSeleccionadas">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input prop_check" value="Nombre" type="checkbox" id="chkNombre" checked>
+                      <label class="form-check-label" for="chkNombre">Nombre</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input prop_check" value="Alias" type="checkbox" id="chkAlias" checked>
+                      <label class="form-check-label" for="chkAlias">Alias</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input prop_check" value="Defensa" type="checkbox" id="chkDefensa" checked>
+                      <label class="form-check-label" for="chkDefensa">Defensa</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input prop_check" value="Miedo" type="checkbox" id="chkMiedo" checked>
+                        <label class="form-check-label" for="chkMiedo">Miedo</label>
+                      </div>
+                      <div class="form-check form-check-inline" >
+                        <input class="form-check-input prop_check" value="Tipo" type="checkbox" id="chkTipo" checked>
+                        <label class="form-check-label" for="chkTipo">Tipo</label>
+                      </div>
+                </fieldset>
+            <div id ="tabla">
+                
+            </div>
+            <img src="../client/assets/images/gato_loader.gif" alt="loader" id="gato_loader" class="ocultar_gato">
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul class="list-unstyled ul-footer">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./monstruos.html">Monstruos</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </nav>
+        <p>LABORATORIO III - TODOS LOS DERECHOS RESERVADOS 2023 ©</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</body>
+</html>

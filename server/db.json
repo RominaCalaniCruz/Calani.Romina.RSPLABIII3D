@@ -1,0 +1,84 @@
+{
+  "monstruos": [
+    {
+      "id": 6,
+      "nombre": "Conde",
+      "alias": "Dracula",
+      "defensa": "estaca",
+      "miedo": 94,
+      "tipo": "vampiro"
+    },
+    {
+      "id": 7,
+      "nombre": "Mavis",
+      "alias": "Mave",
+      "defensa": "estaca",
+      "miedo": 32,
+      "tipo": "vampiro"
+    },
+    {
+      "id": 8,
+      "nombre": "Bob",
+      "alias": "Blobby",
+      "defensa": "pocion",
+      "miedo": 51,
+      "tipo": "fantasma"
+    },
+    {
+      "id": 9,
+      "nombre": "Martin",
+      "alias": "Murray",
+      "defensa": "crucifijo",
+      "miedo": 14,
+      "tipo": "zombie"
+    },
+    {
+      "id": 10,
+      "nombre": "Wanda Lee",
+      "alias": "Wanda",
+      "defensa": "pocion",
+      "miedo": 28,
+      "tipo": "hombre lobo"
+    },
+    {
+      "id": 11,
+      "nombre": "Sadie",
+      "alias": "Winnie",
+      "defensa": "plata",
+      "miedo": 10,
+      "tipo": "hombre lobo"
+    },
+    {
+      "id": 12,
+      "nombre": "Lily",
+      "alias": "Reina Oscura",
+      "defensa": "plata",
+      "miedo": 90,
+      "tipo": "bruja"
+    },
+    {
+      "id": 13,
+      "nombre": "ejemplo",
+      "alias": "coco",
+      "defensa": "crucifijo",
+      "miedo": 69,
+      "tipo": "zombie"
+    },
+    {
+      "id": 14,
+      "nombre": "Romina",
+      "alias": "Romi",
+      "defensa": "crucifijo",
+      "miedo": 100,
+      "tipo": "bruja"
+    }
+  ],
+  "tipos_monstruos": [
+    "esqueleto",
+    "zombie",
+    "vampiro",
+    "fantasma",
+    "bruja",
+    "hombre lobo"
+  ]
+}

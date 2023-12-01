@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../assets/images/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-transform: uppercase;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header,footer{
+    background-position: center;
+    background-size: cover;
+}
+header>img{
+    width: 150px;
+    height: 150px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    min-height: 700px;
+}
+nav>ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
+a,p{
+    text-decoration: none;
+    color: white;
+    padding: 1px 20px;
+}
+nav{
+    display: flex;
+    align-items: center;
+}
+footer>nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#contenido-card{
+    align-items: center;
+}
+.img-icon img{
+    max-height: 25px;
+    margin-left: 5%;
+}
+p,h5,h1,span,a{
+    text-align: center ;
+    color: white !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.img-icon{
+    display: flex;
+    align-items: center;
+}
+.estilo-fondo{
+    background: linear-gradient(to right, #a86008, #ffba56) !important;
+}
+.estilo-progress-bar{
+    background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+}
+a,h1{
+    text-decoration: none;
+    color: white;
+    padding: 1px 20px;
+    background-color: grey;
+    border: 3px solid grey;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+
+.seccion-cards{
+    display: flex;
+    width: 15px;
+}
+#loader-section{
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.ocultar_fantasma{
+    display: none;
+}
+#loader{
+    width: 200px;
+    height: 200px;
+    /* justify-content: center; */
+    margin-left: 40%;
+}
+
+@media screen and (max-width: 650px) {
+    nav{
+        flex-direction: column;
+        justify-content: unset;
+        align-items: center;
+    }
+    ul,footer{
+        flex-direction: column;        
+    }
+    
+}
