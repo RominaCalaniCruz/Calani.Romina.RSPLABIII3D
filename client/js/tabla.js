@@ -1,6 +1,5 @@
 
 export const crearTabla = (data)=>{
-    //if(!Array.isArray(data)) return null;
     const divContainer = document.createElement("div");
     divContainer.classList.add("mt-r","container");
     const tabla = document.createElement("table");
@@ -28,14 +27,12 @@ const crearCabecera = (elemento)=>{
 }
 
 const crearCuerpo = (data)=>{
-    //validar data
     const tBody = document.createElement("tbody");
     data.forEach((element,index) => {
         const tr = document.createElement("tr");
-        // if(index%2 == 0) tr.classList.add("rowPar");
         for (const key in element) {
             if(key === "id") {
-                tr.dataset.id = element[key];// tr.setAttribute("data-id",element[key]);
+                tr.dataset.id = element[key];
             }
             else{
                 const td = document.createElement("td");
